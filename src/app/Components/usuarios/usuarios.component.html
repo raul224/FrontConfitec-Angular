@@ -1,0 +1,32 @@
+<p-dialog header="Cadastro usuario" [(visible)]="displayCadastro" width="300" [responsive]="true">
+  <div class="grid p-fluid">
+    <div class="col-12 md:col-4">
+      <div class="p-inputgroup">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"></span>
+          <input type="text" pInputText placeholder="Nome" [(ngModel)]="usuario.nome">
+        </div>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"></span>
+          <input type="text" pInputText placeholder="Sobrenome" [(ngModel)]="usuario.sobrenome">
+        </div>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"></span>
+          <input type="text" pInputText placeholder="Email" [(ngModel)]="usuario.email">
+        </div>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"></span>
+          <p-calendar [(ngModel)]="usuario.dataNascimento" dateFormat="dd.mm.yyyy"></p-calendar>
+        </div>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"></span>
+          <p-dropdown [options]="escolaridades" [(ngModel)]="usuario.escolaridade" optionLabel="Escolaridade"></p-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p-footer>
+    <button type="button" pButton icon="pi pi-check" (click)="Cadastrar(usuario)" label="Aceitar" class="p-button-success"></button>
+    <button type="button" pButton icon="pi pi-times" (click)="displayCadastro=false" label="Voltar" class="p-button-danger"></button>
+  </p-footer>
+</p-dialog>

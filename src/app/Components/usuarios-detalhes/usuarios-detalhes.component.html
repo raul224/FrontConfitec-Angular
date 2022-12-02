@@ -1,0 +1,32 @@
+<p-dialog header="Detalhes do {{usuario.nome}}" [(visible)]="displayDetalhes" width="300" [responsive]="true">
+  <div class="grid p-fluid">
+    <div class="col-12 md:col-4">
+      <div class="p-inputgroup">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"></span>
+          <input type="text" pInputText placeholder="{{usuario.nome}}" [(ngModel)]="usuario.nome">
+        </div>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"></span>
+          <input type="text" pInputText placeholder="{{usuario.sobrenome}}" [(ngModel)]="usuario.sobrenome">
+        </div>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"></span>
+          <input type="text" pInputText placeholder="{{usuario.email}}" [(ngModel)]="usuario.email">
+        </div>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"></span>
+          <p-calendar [(ngModel)]="usuario.dataNascimento"></p-calendar>
+        </div>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"></span>
+          <p-dropdown [options]="escolaridades" [(ngModel)]="usuario.escolaridade" optionLabel="Escolaridade"></p-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p-footer>
+    <button type="button" pButton icon="pi pi-check" (click)="Editar(usuario)" label="Editar" class="p-button-warning"></button>
+    <button type="button" pButton icon="pi pi-times" (click)="displayDetalhes=false" label="Voltar" class="p-button-danger"></button>
+  </p-footer>
+</p-dialog>

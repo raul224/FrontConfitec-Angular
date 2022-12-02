@@ -1,10 +1,16 @@
-import { Escolaridade } from './Escolaridade';
-
 export class Usuario {
-  id: number;
+  id: number = 0;
   nome: string;
-  sobreNome: string;
+  sobrenome: string;
   email: string;
   dataNascimento: Date;
-  escolaridade: Escolaridade;
+  escolaridade: string;
+
+  constructor(nome: string, sobrenome: string, email: string, dataNascimento: Date, escolaridade: string){
+    this.nome = nome,
+    this.sobrenome = sobrenome,
+    this.email = email,
+    this.dataNascimento = dataNascimento,
+    this.escolaridade = escolaridade
+  }
 }
