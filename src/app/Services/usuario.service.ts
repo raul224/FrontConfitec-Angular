@@ -13,7 +13,7 @@ const httpOption = {
   providedIn: 'root'
 })
 export class UsuarioService {
-  url = 'https://localhost:7108/api/usuarios'
+  url = 'https://localhost:7108/api/Usuarios'
   constructor(private http: HttpClient) { }
 
   GetAll(): Observable<Usuario[]>{

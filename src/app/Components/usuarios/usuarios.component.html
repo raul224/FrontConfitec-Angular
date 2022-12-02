@@ -1,32 +1,28 @@
-<p-dialog header="Cadastro usuario" [(visible)]="displayCadastro" width="300" [responsive]="true">
-  <div class="grid p-fluid">
-    <div class="col-12 md:col-4">
-      <div class="p-inputgroup">
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"></span>
-          <input type="text" pInputText placeholder="Nome" [(ngModel)]="usuario.nome">
-        </div>
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"></span>
-          <input type="text" pInputText placeholder="Sobrenome" [(ngModel)]="usuario.sobrenome">
-        </div>
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"></span>
-          <input type="text" pInputText placeholder="Email" [(ngModel)]="usuario.email">
-        </div>
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"></span>
-          <p-calendar [(ngModel)]="usuario.dataNascimento" dateFormat="dd.mm.yyyy"></p-calendar>
-        </div>
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"></span>
-          <p-dropdown [options]="escolaridades" [(ngModel)]="usuario.escolaridade" optionLabel="Escolaridade"></p-dropdown>
-        </div>
-      </div>
+<p-dialog header="Cadastro usuario" [(visible)]="displayCadastro" [modal]="true" [style]="{width: '50vw'}">
+  <form #f="ngForm">
+    <div class="form-group">
+      <label for="nome">Nome: </label>
+      <input type="text" pInputText placeholder="nome" name="nome" class="form-control" ngModel>
     </div>
-  </div>
-  <p-footer>
-    <button type="button" pButton icon="pi pi-check" (click)="Cadastrar(usuario)" label="Aceitar" class="p-button-success"></button>
+    <div class="form-group">
+      <label for="sobreNome">Sobrenome: </label>
+      <input type="text" pInputText placeholder="Sobrenome" name="sobreNome" class="form-control" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="email">Email: </label>
+      <input type="email" pInputText placeholder="email" name="email" class="form-control" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="dataNascimento">Data de nascimento: </label>
+      <input type="date" pInputText  name="dataNascimento" class="form-control" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="escolaridade">Escolaridade: </label>
+      <p-dropdown name="escolaridade" [options]="escolaridades" ngModel></p-dropdown>
+    </div>
+  </form>
+  <ng-template pTemplate="footer">
+    <button type="submit" pButton icon="pi pi-check" (click)="Cadastrar(f)" label="Aceitar" class="p-button-success"></button>
     <button type="button" pButton icon="pi pi-times" (click)="displayCadastro=false" label="Voltar" class="p-button-danger"></button>
-  </p-footer>
+  </ng-template>
 </p-dialog>

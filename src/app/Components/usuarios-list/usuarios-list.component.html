@@ -1,7 +1,7 @@
 <div class="card">
   <p-toolbar>
     <div class="p-toolbar-group-left">
-      <button type="button" pButton label="New" icon="pi pi-plus" class="mr-2 p-button-success" (Click)="Create()"></button>
+      <button pButton label="novo" icon="pi pi-plus" class="p-button-success" (click)="Create()"></button>
   </div>
   </p-toolbar>
   <p-table [value]="usuariosList" styleClass="p-datatable-gridlines" [tableStyle]="{'min-width': '50rem'}">
@@ -24,7 +24,7 @@
         <tr>
             <td>{{usuario.id}}</td>
             <td>{{usuario.nome}}</td>
-            <td>{{usuario.sobrenome}}</td>
+            <td>{{usuario.sobreNome}}</td>
             <td>{{usuario.email}}</td>
             <td>{{usuario.dataNascimento}}</td>
             <td>{{usuario.escolaridade}}</td>
@@ -35,7 +35,7 @@
   </p-table>
 </div>
 
-<div *ngIf="usuarioEditar">
+<div *ngIf="displayDetalhes">
   <app-usuarios-detalhes [displayDetalhes]="displayDetalhes" [usuario]="usuarioEditar"></app-usuarios-detalhes>
 </div>
 

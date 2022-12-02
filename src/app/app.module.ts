@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UsuariosComponent } from './Components/usuarios/usuarios.component';
 import { UsuariosListComponent } from './Components/usuarios-list/usuarios-list.component';
 import { UsuariosDetalhesComponent } from './Components/usuarios-detalhes/usuarios-detalhes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { UsuariosDetalhesComponent } from './Components/usuarios-detalhes/usuari
     DialogModule,
     DropdownModule,
     CalendarModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [HttpClientModule, UsuarioService],
   bootstrap: [AppComponent]

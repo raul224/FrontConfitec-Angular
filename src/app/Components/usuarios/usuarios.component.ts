@@ -21,8 +21,9 @@ export class UsuariosComponent {
 
   }
 
-  Cadastrar(usuario: Usuario){
-    this.usuariosService.Create(usuario).subscribe(
+  Cadastrar(form: any){
+    this.usuario = new Usuario(form.value.nome, form.value.sobreNome, form.value.email, form.value.dataNascimento, form.value.escolaridade);
+    this.usuariosService.Create(this.usuario).subscribe(
       data => {
         this.displayCadastro = false;
       },

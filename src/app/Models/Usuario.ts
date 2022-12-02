@@ -1,16 +1,16 @@
 export class Usuario {
-  id: number = 0;
-  nome: string;
-  sobrenome: string;
-  email: string;
-  dataNascimento: Date;
-  escolaridade: string;
+  Id: number = 0;
+  Nome: string;
+  SobreNome: string;
+  Email: string;
+  DataNascimento: Date;
+  Escolaridade: string;
 
   constructor(nome: string, sobrenome: string, email: string, dataNascimento: Date, escolaridade: string){
-    this.nome = nome,
-    this.sobrenome = sobrenome,
-    this.email = email,
-    this.dataNascimento = dataNascimento,
-    this.escolaridade = escolaridade
+    this.Nome = nome,
+    this.SobreNome = sobrenome,
+    this.Email = email,
+    this.DataNascimento = dataNascimento,
+    this.Escolaridade = escolaridade
   }
 }

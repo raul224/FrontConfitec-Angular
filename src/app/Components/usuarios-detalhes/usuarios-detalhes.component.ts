@@ -22,7 +22,7 @@ export class UsuariosDetalhesComponent {
   }
 
   ngOnInit(){
-    this.usuariosService.Get(this.usuario.id).subscribe(
+    this.usuariosService.Get(this.usuario.Id).subscribe(
       data => {
         this.usuario = data;
       },

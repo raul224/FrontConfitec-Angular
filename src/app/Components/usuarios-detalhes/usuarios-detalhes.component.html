@@ -1,32 +1,20 @@
-<p-dialog header="Detalhes do {{usuario.nome}}" [(visible)]="displayDetalhes" width="300" [responsive]="true">
+<p-dialog header="Detalhes do {{usuario.Nome}}" [(visible)]="displayDetalhes" [modal]="true" [style]="{width: '50vw'}">
   <div class="grid p-fluid">
     <div class="col-12 md:col-4">
-      <div class="p-inputgroup">
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"></span>
-          <input type="text" pInputText placeholder="{{usuario.nome}}" [(ngModel)]="usuario.nome">
-        </div>
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"></span>
-          <input type="text" pInputText placeholder="{{usuario.sobrenome}}" [(ngModel)]="usuario.sobrenome">
-        </div>
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"></span>
-          <input type="text" pInputText placeholder="{{usuario.email}}" [(ngModel)]="usuario.email">
-        </div>
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"></span>
-          <p-calendar [(ngModel)]="usuario.dataNascimento"></p-calendar>
-        </div>
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"></span>
-          <p-dropdown [options]="escolaridades" [(ngModel)]="usuario.escolaridade" optionLabel="Escolaridade"></p-dropdown>
-        </div>
-      </div>
+      <label for="nome"></label>
+      <input type="text" pInputText placeholder="{{usuario.Nome}}" [(ngModel)]="usuario.Nome">
+      <label for="sobrenome"></label>
+      <input type="text" pInputText placeholder="{{usuario.SobreNome}}" [(ngModel)]="usuario.SobreNome">
+      <label for="email"></label>
+      <input type="text" pInputText placeholder="{{usuario.Email}}" [(ngModel)]="usuario.Email">
+      <label for="dataNascimento"></label>
+      <input type="date" name="dataNascimento" [(ngModel)]="usuario.DataNascimento" placeholder="{{usuario.DataNascimento}}">
+      <label for="escolaridade"></label>
+      <p-dropdown name="escolaridade" [options]="escolaridades" [(ngModel)]="usuario.Escolaridade"></p-dropdown>
     </div>
   </div>
-  <p-footer>
+  <ng-template pTemplate="footer">
     <button type="button" pButton icon="pi pi-check" (click)="Editar(usuario)" label="Editar" class="p-button-warning"></button>
     <button type="button" pButton icon="pi pi-times" (click)="displayDetalhes=false" label="Voltar" class="p-button-danger"></button>
-  </p-footer>
+  </ng-template>
 </p-dialog>

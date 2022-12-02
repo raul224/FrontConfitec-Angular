@@ -34,7 +34,6 @@ export class UsuariosListComponent {
   }
 
   Create(){
-    console.log(this.displayCadastro)
     this.displayCadastro = true;
   }
 
